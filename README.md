@@ -6,7 +6,8 @@ MOLEDET is an AI-powered smart water monitoring system that detects pipeline lea
 
 It provides real-time alerts, reduces water wastage, and ensures safe water supply through intelligent monitoring.
 
-⚙️ Features
+⚙️ Features:
+
 🚰 Leak detection using Flow Rate & Pressure
 🧪 Water quality prediction (Safe / Unsafe)
 ⚡ Real-time Telegram alert system
@@ -15,14 +16,16 @@ It provides real-time alerts, reduces water wastage, and ensures safe water supp
 🔕 Alert spam control using flags
 ✅ Recovery alerts when system returns to normal
 
-🧠 Tech Stack
+🧠 Tech Stack:
+
 Python
 Machine Learning (Random Forest)
 Streamlit
 Pandas & Scikit-learn
 Telegram Bot API
 
-🧪 Sensors Used
+🧪 Sensors Used:
+
 Flow Sensor
 Pressure Sensor
 pH Sensor
@@ -31,30 +34,39 @@ TDS Sensor
 Temperature Sensor
 Conductivity Sensor
 
-🧩 System Architecture
+🧩 System Architecture:
+
 MOLEDET follows a layered intelligent architecture:
-🔷 Sensor Layer
+🔷 Sensor Layer:
+
 📡 Collects real-time data from pipeline and water
 Flow, Pressure, pH, Turbidity, TDS
-🔷 Data Processing Layer
-⚡ Cleans and prepares data for analysis
-Filtering & formatting
-🔷 AI Prediction Layer
-🧠 Random Forest model predicts:
 
+🔷 Data Processing Layer:
+
+⚡ Cleans and prepares data for analysis
+
+Filtering & formatting
+🔷 AI Prediction Layer:
+
+🧠 Random Forest model predicts:
 Leak / No Leak
 Safe / Unsafe water
-🔷 Decision Layer
-🚦 Smart logic applied:
 
+🔷 Decision Layer:
+
+🚦 Smart logic applied:
 Risk classification
 Alert spam control
 Recovery detection
-🔷 Application Layer
-📊 Streamlit dashboard displays:
 
+🔷 Application Layer:
+
+📊 Streamlit dashboard displays:
 Status, predictions, alerts
-🔷 Alert System
+
+🔷 Alert System:
+
 📩 Telegram API sends real-time alerts
 
 alerts
