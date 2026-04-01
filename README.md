@@ -11,11 +11,17 @@ It provides real-time alerts, reduces water wastage, and ensures safe water supp
 ⚙️ Features:
 
 🚰 Leak detection using Flow Rate & Pressure
+
 🧪 Water quality prediction (Safe / Unsafe)
+
 ⚡ Real-time Telegram alert system
+
 📊 Interactive Streamlit dashboard
+
 🚦 Risk classification (Low / Medium / High)
+
 🔕 Alert spam control using flags
+
 ✅ Recovery alerts when system returns to normal
 
 🧠 Tech Stack:
