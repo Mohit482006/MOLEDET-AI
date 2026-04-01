@@ -94,7 +94,93 @@ flow = st.sidebar_number_input("Flow Rate (L/min)",0.0,200.0,30.0)
 pressure = st.sidebar_number_input("Pressure (bar)",0.0,10.0,2.5)
 predict_btn = st.sidebar.button("🔍 Predict")
 
+#====================================================
+#PREDICTIONS
+#=====================================================
+col1,col2=st.columns(2)
+
+#------WATER QUALITY------
+with col1:
+  st.subheader(" Water Quality")
+
+  if predict_btn:
+    input_wq=pd.DataFrame([[pH, turbidity,tds,temp,cond]],columns=water_features)
+    result=wq_encoder.inverse_transform(wq_model.predict(input_wq))[0]
+    
+    if result=="Unsafe":
+      st.error("Water Quality: UNSAFE")
+      st.session_state.water_recovered = False
+      
+      if not st.sesion_state.water_alert_sent:
+        send_telegram_alert("WATER QUALITY UNSAFE \nImmediate action required.")
+        st.session_state.water_alert_sent=True
+        st.session_state.alert_log.append(
+          {"Type": "Water Unsafe","Risk": "MEDIUM"}
+        )
+        
+    else:
+      st.success("Water Quality :SAFE)
+
+      if st.session_state.water_alert_sent and not st.session_state.water_recovered:
+        send_telegram_alert("WATER QUALITY NORMAL \nWater is Safe again.")
+        st.session_state.water_recovered=True
+        st.session_state.water_alert_sent=False
+
+
+#--------LEAK DETECTION----------
+with col2:
+  st.subheader("Leak Detection")
+
+if predict_btn:
+  input_leak=pd.DataFrame([[flow,pressure]],columns=leak_features)
+  result=leak_encoder.inverse_transform(leak_model.predict(input_leak))[0]
+  risk=calculate_leak_risk(flow,pressure)
+
+  if result=="Leak":
+    st.error(f" Leak Detected | Risk:{risk}")
+    st.session_state_.leak_recovered= False
+
+    if not st.session_state.leak_alert_sent:
+      send_telegram_alert(
+        f" PIPELINE LEAK ALERT\n Flow : {Flow} L/min\nPressure: {pressure}bar\nRisk: {risk}"
+      )
+      st.session_state.leak_alert_sent=True
+      st.session_state.alert_log.append(
+        {"Type": "Leak","Risk":risk}
+      )
+
+  else:
+    st.success("No Leak Detected")
+
+    if(st.session_state.leak_alert_sent and not st.session_state.leak_recovered:
+      send_telegram_alert("PIPELINE STATUS NORMAL\nLeak resolved")
+      st.session_state.leak_recovered =True
+      st.session_state.leak_alert_sent=False
 
 
 
-  
+#==========================================================
+#ALERT HISTORY
+#==========================================================
+st.subheader("Alert History")
+st.dataframe(pd.DataFrame(st.session_state.alert_log))
+
+#==============================================================
+#JUDGE EXPLANATION
+#===============================================================
+st.subheader("Explanation About it")
+st.info("""
+Our AI-based smart water monitoring system detects unsafe water
+and pipeline leaks using machine learning models.
+
+When a problem occurs, a real-time alert is sent using a free
+Telegram-based notification system. To avoid alert flooding,
+alerts are sent only once per incident.
+
+When the issue is resolved, the system automatically sends a recovery 
+alert indicating that conditions are back to normal.
+
+Each alert is classified by risk level and stored in a dashboard
+for monitoring and future analysis. The system works on existing
+pipelines without infrastructure changes.
+""")
