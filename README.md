@@ -1,7 +1,9 @@
 💧 MOLEDET-AI
+
 🚀 AI-Based Smart Water Monitoring & Leak Detection System
 
-🌍 About the Project
+🌍 About the Project:
+
 MOLEDET is an AI-powered smart water monitoring system that detects pipeline leaks and monitors water quality using sensor data and machine learning.
 
 It provides real-time alerts, reduces water wastage, and ensures safe water supply through intelligent monitoring.
@@ -71,10 +73,12 @@ Status, predictions, alerts
 
 alerts
 
-🔄 Data Flow
+🔄 Data Flow:
+
 Sensors → Data Processing → AI Model → Decision Logic → Dashboard + Alerts
 
-📊 Project Demo
+📊 Project Demo:
+
 ### 📊 Dashboard Overview  
 <img src="screenshots/Working_Diagram_OF_Moledet.png" width="400">
 
@@ -97,15 +101,18 @@ Sensors → Data Processing → AI Model → Decision Logic → Dashboard + Aler
 ✔ Alerts for leak and unsafe water  
 ✔ Includes recovery notification
 
-📈 Future Improvements
+📈 Future Improvements:
+
 Real-time IoT sensor integration (ESP32)
 Cloud deployment
 Mobile app development
 Advanced anomaly detection
 GPS-based leak location detection
 
-👨‍💻 Author
+👨‍💻 Author:
+
 Mohit Singh Bhadoriya
 
-⭐ Show Your Support
+⭐ Show Your Support:
+
 If you like this project, give it a ⭐ on GitHub!
