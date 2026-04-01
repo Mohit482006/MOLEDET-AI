@@ -27,19 +27,29 @@ It provides real-time alerts, reduces water wastage, and ensures safe water supp
 🧠 Tech Stack:
 
 Python
+
 Machine Learning (Random Forest)
+
 Streamlit
+
 Pandas & Scikit-learn
+
 Telegram Bot API
 
 🧪 Sensors Used:
 
 Flow Sensor
+
 Pressure Sensor
+
 pH Sensor
+
 Turbidity Sensor
+
 TDS Sensor
+
 Temperature Sensor
+
 Conductivity Sensor
 
 🧩 System Architecture:
@@ -110,9 +120,13 @@ Sensors → Data Processing → AI Model → Decision Logic → Dashboard + Aler
 📈 Future Improvements:
 
 Real-time IoT sensor integration (ESP32)
+
 Cloud deployment
+
 Mobile app development
+
 Advanced anomaly detection
+
 GPS-based leak location detection
 
 👨‍💻 Author:
