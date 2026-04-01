@@ -64,17 +64,22 @@ Sensors → Data Processing → AI Model → Decision Logic → Dashboard + Aler
 
 📊 Project Demo
 ### 📊 Dashboard Overview  
-<img src="screenshots/Working_Diagram_OF_Moledet.png" width="700">
+<img src="screenshots/Working_Diagram_OF_Moledet.png" width="400">
+
 ### 🚨 Leak Detection  
-<img src="screenshots/Leak_alert.png" width="700">
+<img src="screenshots/Leak_alert.png" width="400">
+
 ✔ System detects abnormal flow and pressure  
 ✔ Displays risk level (High / Medium)
+
 ### 🎛️ Sensor Input Simulation  
-<img src="screenshots/Sensor_values.png" width="700">
+<img src="screenshots/Sensor_values.png" width="400">
+
 ✔ User can simulate real sensor values  
 ✔ Helps in testing different scenarioss
+
 ### 📩 Real-Time Alerts  
-<img src="screenshots/Leak_alert_On_telegram.png" width="700">
+<img src="screenshots/Leak_alert_On_telegram.png" width="400">
 
 ✔ Instant notification via Telegram  
 ✔ Alerts for leak and unsafe water  
